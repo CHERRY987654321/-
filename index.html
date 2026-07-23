@@ -5,207 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Janemmmmm 🌸✨</title>
     <style>
-        @import url('https://googleapis.com');
-
-        body {
-            margin: 0; padding: 0;
-            background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 50%, #fbd3e9 100%);
-            color: #4a3b42;
-            font-family: 'Quicksand', sans-serif;
-            min-height: 100vh;
-            overflow-x: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Premium Floating Elements & Ambient Effects */
-        .ambient-hearts {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 1;
-        }
-
-        #audio-controls {
-            position: fixed; bottom: 20px; right: 20px;
-            background: rgba(255, 182, 193, 0.85);
-            padding: 12px 20px; border-radius: 30px;
-            font-size: 14px; font-weight: bold; cursor: pointer;
-            z-index: 100; box-shadow: 0 4px 15px rgba(255,105,180,0.25);
-            border: 1px solid rgba(255,255,255,0.6);
-            backdrop-filter: blur(5px);
-        }
-
-        .container {
-            width: 90%; max-width: 580px;
-            margin: 20px auto; padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.65);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            border-radius: 32px;
-            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
-            backdrop-filter: blur(15px);
-            position: relative; z-index: 10;
-            box-sizing: border-box;
-        }
-
-        /* Core Engine: Soft Kawaii Page Navigation */
-        .page { display: none; }
-        .active-page {
-            display: block;
-            animation: kawaiiTransition 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
-        }
-
-        @keyframes kawaiiTransition {
-            0% { opacity: 0; transform: scale(0.92) translateY(20px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        h1 {
-            font-family: 'Fredoka One', cursive;
-            font-size: 34px; color: #ff5c8a;
-            text-shadow: 2px 2px 0px #fff;
-            margin: 10px 0; line-height: 1.3;
-        }
-
-        .subtitle {
-            font-size: 17px; color: #ff758f;
-            font-weight: bold; font-style: italic; margin-bottom: 25px;
-        }
-
-        .glass-box {
-            background: rgba(255, 255, 255, 0.55);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            border-radius: 20px; padding: 22px;
-            text-align: left; line-height: 1.8;
-            font-size: 16px; margin: 20px 0;
-            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.15);
-        }
-
-        /* Interactive Grid Style for Page 3 & Page 4 */
-        .card-grid {
-            max-height: 320px; overflow-y: auto;
-            margin: 20px 0; padding-right: 5px;
-        }
-
-        .interactive-card {
-            background: rgba(255, 255, 255, 0.8);
-            border: 1.5px solid #ffb3c6;
-            padding: 15px; margin: 12px 0;
-            border-radius: 16px; font-size: 16px; font-weight: bold;
-            display: flex; align-items: center; gap: 15px;
-            cursor: pointer; transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(255,182,193,0.1);
-        }
-
-        .interactive-card:hover {
-            transform: translateY(-2px);
-            background: #fff0f3; border-color: #ff758f;
-        }
-
-        .card-detail {
-            display: none; font-weight: normal; font-size: 15px;
-            color: #6c5862; margin-top: 8px; line-height: 1.5;
-            border-top: 1px dashed #ffccd5; padding-top: 8px;
-        }
-
-        .btn-kawaii {
-            background: linear-gradient(135deg, #ff85a2, #ff5c8a);
-            color: white; border: none; padding: 15px 45px;
-            font-size: 18px; font-weight: bold; border-radius: 50px;
-            cursor: pointer; box-shadow: 0 6px 20px rgba(255, 92, 138, 0.4);
-            margin-top: 15px; transition: 0.3s ease;
-            font-family: 'Quicksand', sans-serif;
-        }
-
-        .btn-kawaii:hover {
-            transform: scale(1.04);
-            box-shadow: 0 8px 25px rgba(255, 92, 138, 0.6);
-        }
-
-        .kitten-illustration { font-size: 65px; margin: 15px 0; }
-
-        /* Floating Hearts & Rainfall Animation */
-        .heart-particle {
-            position: absolute; pointer-events: none;
-            bottom: -50px; animation: floatUpward 4.5s linear infinite;
-        }
-
-        @keyframes floatUpward {
-            0% { transform: translateY(0) rotate(0deg) scale(0.6); opacity: 1; }
-            100% { transform: translateY(-110vh) rotate(360deg) scale(1.2); opacity: 0; }
-        }
-
-        /* Custom Scrollbar for list grids */
-        .card-grid::-webkit-scrollbar { width: 6px; }
-        .card-grid::-webkit-scrollbar-track { background: rgba(255,255,255,0.3); border-radius: 10px; }
-        .card-grid::-webkit-scrollbar-thumb { background: #ffccd5; border-radius: 10px; }
-
-        .countdown-style {
-            font-size: 20px; font-weight: bold; color: #ff5c8a;
-            margin-top: 15px; text-shadow: 1px 1px #fff;
-        }
+        body { margin: 0; padding: 0; background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%); color: #4a3b42; font-family: sans-serif; text-align: center; min-height: 100vh; }
+        .container { width: 90%; max-width: 540px; margin: 40px auto; padding: 30px 20px; background: rgba(255, 255, 255, 0.75); border: 2px solid #fff; border-radius: 24px; box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4); backdrop-filter: blur(10px); }
+        .page { display: none; animation: f 0.5s ease-out forwards; }
+        .active { display: block; }
+        @keyframes f { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        h1 { color: #ff5c8a; font-size: 28px; margin: 10px 0; }
+        .box { background: rgba(255, 255, 255, 0.6); border-radius: 15px; padding: 20px; text-align: left; line-height: 1.7; margin: 20px 0; border: 1px solid #ffccd5; }
+        .card { background: #fff; border: 1px solid #ffb3c6; padding: 12px; margin: 10px 0; border-radius: 12px; font-weight: bold; cursor: pointer; text-align: left; }
+        .desc { display: none; font-weight: normal; color: #6c5862; margin-top: 5px; border-top: 1px dashed #ffccd5; padding-top: 5px; }
+        .btn { background: linear-gradient(135deg, #ff85a2, #ff5c8a); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: bold; border-radius: 50px; cursor: pointer; margin-top: 15px; }
+        .heart { position: fixed; pointer-events: none; bottom: -50px; animation: floatUp 4s linear infinite; }
+        @keyframes floatUp { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-110vh); opacity: 0; } }
     </style>
 </head>
 <body>
-
-    <div class="ambient-hearts" id="hearts-layer"></div>
-
-    <!-- Dreamy Lofi Music Player Component -->
-    <div id="audio-controls" onclick="manageMusic()">🎵 Dreamy Lofi On</div>
-    <audio id="bg-dream-track" loop>
-        <source src="https://soundhelix.com" type="audio/mpeg">
-    </audio>
-
     <div class="container">
-
-        <!-- ================= LANDING SCREEN ================= -->
-        <div id="landing" class="page active-page">
-            <div class="kitten-illustration">✨🎂🐈🌸</div>
+        <!-- LANDING -->
+        <div id="p1" class="page active">
+            <div style="font-size:50px;">✨🎂🐈🌸</div>
             <h1>Happy Birthday Janemmmmm 💖</h1>
-            <p class="subtitle">"Made with endless duas, love and countless smiles."</p>
-            <button class="btn-kawaii" onclick="shiftPage('p1')">Open Your Surprise 💝</button>
+            <p style="color:#ff758f; font-weight:bold;">"Made with endless duas, love and countless smiles."</p>
+            <button class="btn" onclick="go(2)">Open Your Surprise 💝</button>
         </div>
 
-        <!-- ================= PAGE 1 ================= -->
-        <div id="p1" class="page">
+        <!-- PAGE 1 -->
+        <div id="p2" class="page">
             <h1>A Little Message Before We Start 🌸</h1>
-            <div class="glass-box" style="text-align: center; font-size: 18px; font-weight: bold;">
+            <div class="box" style="text-align: center; font-weight: bold;">
                 "Today isn't just another day.<br><br>
                 Today is the day Allah blessed this world with someone very special.<br><br>
-                Take a deep breath...<br><br>
-                Smile...<br><br>
+                Take a deep breath... Smile...<br><br>
                 Because today is all about YOU."
             </div>
-            <button class="btn-kawaii" onclick="shiftPage('p2')">Next 👉🏻👈🏻</button>
+            <button class="btn" onclick="go(3)">Next 👉🏻👈🏻</button>
         </div>
 
-        <!-- ================= PAGE 2 ================= -->
-        <div id="p2" class="page">
-            <div class="kitten-illustration">🤲🏻🤍✨</div>
-            <h1>Alhamdulillah 🤍</h1>
-            <div class="glass-box" style="font-size: 17px; text-align: center;">
-                O Allah, I am endlessly grateful for the precious moment You made our paths cross. Thank you for bringing my beautiful best friend into my life. <br><br>
-                Her loyal friendship is truly one of the most beautiful and pure blessings I have ever received in this world. Alhamdulillah for everything! 💕
-            </div>
-            <button class="btn-kawaii" onclick="shiftPage('p3')">Why You're Special 🌸</button>
-        </div>
-
-        <!-- ================= PAGE 3 ================= -->
+        <!-- PAGE 2 -->
         <div id="p3" class="page">
-            <h1>Why You're So Special 🌸</h1>
-            <p style="font-size: 14px; margin-top: -15px; color: #ff758f;">(Tap each card to reveal sweet thoughts ✨)</p>
-            <div class="card-grid">
-                <div class="interactive-card" onclick="toggleCard(this)">🎈 Patient Listener <div class="card-detail">You always listen so patiently to all my silly rants and long stories without ever getting bored.</div></div>
-                <div class="interactive-card" onclick="toggleCard(this)">🌸 Deeply Understood <div class="card-detail">You make me feel completely understood even when I can't put my feelings into the right words.</div></div>
-                <div class="interactive-card" onclick="toggleCard(this)">🕊️ Voice of Peace <div class="card-detail">Your voice and your words always bring an instant sense of peace to my chaotic days.</div></div>
-                <div class="interactive-card" onclick="toggleCard(this)">🎉 Pure Celebration <div class="card-detail">You genuinely celebrate my small and big happiness like it's your own achievement.</div></div>
-                <div class="interactive-card" onclick="toggleCard(this)">🫂 Safe Comfort <div class="card-detail">You always comfort and hold me close in my most difficult and vulnerable moments.</div></div>
-                <div class="interactive-card" onclick="toggleCard(this)">⭐ Never Judgmental <div class="card-detail">You accept me completely for who I am and never judge any of my flaws or mistakes.</div></div>
-                <div class="interactive-card" onclick="toggleCard(this)">💞 Respectful Heart <div class="card-detail">You deeply respect my opinions and choices, making me feel valued every single day.</div></div>
-                <div class="interactive-card" onclick="toggleCard(this)">🏠 My Safe Place <div class="card-detail">You are my ultimate safe place, my home away from home, and my true comfort zone.</div></div>
+            <h1>Alhamdulillah 🤍</h1>
+            <div class="box" style="text-align: center;">
+                O Allah, I am endlessly grateful for the precious moment You made our paths cross. Thank you for bringing my beautiful best friend into my life.<br><br>
+                Her loyal friendship is truly one of the most beautiful and pure blessings I have ever received. 💕
             </div>
-            <button class="btn-kawaii" onclick="shiftPage('p4')">Next Page 🤲🏻</button>
+            <button class="btn" onclick="go(4)">Why You're Special 🌸</button>
         </div>
 
-        <!-- ================= PAGE 4 ================= -->
+        <!-- PAGE 3 -->
         <div id="p4" class="page">
+            <h1>Why You're So Special 🌸</h1>
+            <p style="font-size:12px; color:#ff758f; margin-top:-10px;">(Tap to reveal details ✨)</p>
+            <div class="card" onclick="t(this)">🎈 Patient Listener <div class="desc">You always listen so patiently to all my silly rants and long stories.</div></div>
+            <div class="card" onclick="t(this)">🌸 Deeply Understood <div class="desc">You make me feel completely understood even without words.</div></div>
+            <div class="card" onclick="t(this)">🕊️ Voice of Peace <div class="desc">Your words always bring an instant sense of peace to my days.</div></div>
+            <div class="card" onclick="t(this)">🫂 Safe Comfort <div class="desc">You always comfort and hold me close in my difficult moments.</div></div>
+            <div class="card" onclick="t(this)">🏠 My Safe Place <div class="desc">You are my ultimate safe place, my home away from home.</div></div>
+            <button class="btn" onclick="go(5)">Next Page 🤲🏻</button>
+        </div>
+
+        <!-- PAGE 4 -->
+        <div id="p5" class="page">
             <h1>My Duas For You 🤲🏻</h1>
+            <p style="font-size:12px; color:#ff758f; margin-top:-10px;">(Tap to unlock prayers 🤍)</p>
+            <div class="card" onclick="t(this)">✨ Precious Happiness <div class="desc">May Allah bless you with all the infinite happiness of life. Ameen.</div></div>
+            <div class="card" onclick="t(this)">🛡️ Divine Protection <div class="desc">May Allah protect you always from every evil eye and sorrow. Ameen.</div></div>
+            <div class="card" onclick="t(this)">📚 Academic Success <div class="desc">May Allah grant you exceptional success in your studies. Ameen.</div></div>
+            <div class="card" onclick="t(this)">🌐 Meet Up Soon <div class="desc">May Allah collapse this long distance and let us meet very soon, InshaAllah!</div></div>
+            <div class="card" onclick="t(this)">👭 Bond Forever <div class="desc">May our beautiful friendship remain protected and strong forever. Ameen.</div></div>
+            <button class="btn" onclick="go(6)">One More Thing... 💌</button>
+        </div>
+
+        <!-- PAGE 5 -->
+        <div id="p6" class="page">
+            <h1>One More Thing... 💌</h1>
+            <div class="box" style="font-size: 14px; border-left: 4px solid #ff5c8a;">
+                <b>Me:</b> Janemmmmm!!! Happy Birthday again! 🥳😭🥹 Guyzzzz look who leveled up today! Meri pyari Bhalouuuu hnji 👉🏻👈🏻<br><br>
+                <b>Me:</b> Thank you for existing. Thank you for being my safe place. I am so deeply blessed that Allah made our paths cross. 😂🤍🌸💞🫂<br><br>
+                <b>Me:</b> May Allah bless you with all the happiness. I can't wait for the day we finally break this long distance and meet in person, InshaAllah! Direct hug karni h! 😂❤️
+            </div>
+            <button class="btn" onclick="go(7)">One Final Gift 🎉</button>
+        </div>
+
+        <!-- FINAL PAGE -->
+        <div id="p7" class="page">
+            <div style="font-size:50px;">🐈🎈✨</div>
+            <h1 style="color: #ff0055;">🎉 HAPPY BIRTHDAY JANEMMMMM 🎂💖</h1>
+            <button class="btn" id="lbl" onclick="showEnd()">One Last Click 💝</button>
+            <div id="end" style="display:none;" class="box">
+                <p style="font-weight:bold; text-align:center;">
+                    "I'll always pray for your happiness. Stay blessed. Stay smiling. Stay exactly the way you are. Happy Birthday, my precious friend."
+                </p>
+                <div style="border-top:1px dashed #ff85a2; padding-top:10px; text-align:center; font-size:14px; color:#ff5c8a; font-weight:bold;">
+                    Our first meetup countdown starts now... InshaAllah ❤️
+                    <div id="timer" style="font-size:18px; margin-top:5px; color:#ff0055;">Loading...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function go(num) {
+            for (let i=1; i<=7; i++) { document.getElementById('p'+i).classList.remove('active'); }
+            document.getElementById('p'+num).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function t(el) {
+            var d = el.querySelector('.desc');
+            if (d.style.display === "block") { d.style.display = "none"; el.style.background = "#fff"; }
+            else { d.style.display = "block"; el.style.background = "#fff0f3"; }
+        }
+        function showEnd() {
+            document.getElementById('end').style.display = "block";
+            document.getElementById('lbl').style.display = "none";
+            setInterval(rain, 200);
+            countdown();
+        }
+        function rain() {
+            const sym = ['💖', '🌸', '✨', '🎈', '🧸', '👑'];
+            const p = document.createElement('div');
+            p.classList.add('heart');
+            p.innerHTML = sym[Math.floor(Math.random()*sym.length)];
+            p.style.left = Math.random()*100 + 'vw';
+            p.style.fontSize = Math.floor(Math.random()*15 + 20) + 'px';
+            document.body.appendChild(p);
+            setTimeout(() => { p.remove(); }, 4000);
+        }
+        function countdown() {
+            const target = new Date("July 24, 2027 00:00:00").getTime();
+            setInterval(function() {
+                const diff = target - new Date().getTime();
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById("timer").innerHTML = d + "d " + h + "h " + m + "m " + s + "s";
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
