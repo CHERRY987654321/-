@@ -16,20 +16,6 @@
             overflow-x: hidden;
         }
 
-        #audio-controls {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #ff5500, #ff007f);
-            padding: 12px 22px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 100;
-            box-shadow: 0 0 20px #ff5500;
-        }
-
         .container {
             max-width: 620px;
             margin: 40px auto;
@@ -44,7 +30,7 @@
 
         .page {
             display: none;
-            animation: emoteEntry 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation: emoteEntry 0.5s ease-out forwards;
         }
 
         .active-page {
@@ -52,8 +38,8 @@
         }
 
         @keyframes emoteEntry {
-            from { opacity: 0; transform: scale(0.8) translateY(30px) rotate(-2deg); }
-            to { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .badge-gaming {
@@ -82,7 +68,6 @@
             font-size: 19px;
             color: #00ffcc;
             font-weight: bold;
-            text-shadow: 0 0 10px rgba(0,255,204,0.4);
             margin-bottom: 25px;
         }
 
@@ -123,12 +108,6 @@
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(255, 68, 0, 0.4);
             margin-top: 15px;
-            transition: 0.3s;
-        }
-
-        .btn-gamer:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px #ffaa00;
         }
 
         .particle {
@@ -136,25 +115,19 @@
             pointer-events: none;
             bottom: -50px;
             animation: gravityFall 4.5s linear infinite;
-            z-index: 99;
         }
 
         @keyframes gravityFall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
         }
     </style>
 </head>
 <body>
 
-    <div id="audio-controls" onclick="handleMusic()">🎵 Play Game Sound</div>
-    <audio id="bg-music" loop>
-        <source src="https://soundhelix.com" type="audio/mpeg">
-    </audio>
-
     <div class="container">
 
-        <!-- ================= PAGE 1 ================= -->
+        <!-- PAGE 1 -->
         <div id="p1" class="page active-page">
             <div class="badge-gaming">🎮 SECURITY CHECK: OK</div>
             <h1>BATTLEGROUND LOBBY</h1>
@@ -167,7 +140,7 @@
             <button class="btn-gamer" onclick="navigate(2)">Start Birthday Match ⚔️</button>
         </div>
 
-        <!-- ================= PAGE 2 ================= -->
+        <!-- PAGE 2 -->
         <div id="p2" class="page">
             <div class="badge-gaming">🌟 CODE NAME VERIFICATION</div>
             <h1>MY FAVORITE PLAYER</h1>
@@ -179,7 +152,7 @@
             <button class="btn-gamer" onclick="navigate(3)">Check Friendship Stats 📈</button>
         </div>
 
-        <!-- ================= PAGE 3 ================= -->
+        <!-- PAGE 3 -->
         <div id="p3" class="page">
             <div class="badge-gaming">🌐 MATCH TIMELINE: LOADED</div>
             <h1>OUR SQUAD HISTORY</h1>
@@ -191,7 +164,7 @@
             <button class="btn-gamer" onclick="navigate(4)">Unlock The Gift 🎁</button>
         </div>
 
-        <!-- ================= PAGE 4 ================= -->
+        <!-- PAGE 4 -->
         <div id="p4" class="page">
             <div class="badge-gaming">🔥 LEVEL 4: THE BOOYAH BLAST</div>
             <h1 style="font-size: 40px; color: #00ffcc; text-shadow: 0 0 25px #00ffcc;">🎉 HAPPY BIRTHDAY BISMA 🎉</h1>
@@ -204,7 +177,7 @@
             <button class="btn-gamer" onclick="navigate(5)">Claim Free Diamonds 💎</button>
         </div>
 
-        <!-- ================= PAGE 5 ================= -->
+        <!-- PAGE 5 -->
         <div id="p5" class="page">
             <div class="badge-gaming">💎 LEVEL 5: GRANDMASTER REWARD</div>
             <h1>DIAMOND AIRDROP SUCCESSFUL</h1>
@@ -220,21 +193,34 @@
     </div>
 
     <script>
-        function handleMusic() {
-            var track = document.getElementById('bg-music');
-            var controller = document.getElementById('audio-controls');
-            try {
-                if (track.paused) {
-                    track.play();
-                    controller.innerHTML = "⏸️ Pause Sound";
-                } else {
-                    track.pause();
-                    controller.innerHTML = "🎵 Play Game Sound";
-                }
-            } catch(e) { console.log("Audio block bypass"); }
+        function navigate(pageNumber) {
+            for (let i = 1; i <= 5; i++) {
+                var p = document.getElementById('p' + i);
+                if(p) p.style.display = 'none';
+            }
+            var nextP = document.getElementById('p' + pageNumber);
+            if(nextP) nextP.style.display = 'block';
+
+            if (pageNumber === 4 || pageNumber === 5) {
+                dropParticles();
+            }
         }
 
-        function navigate(pageNumber) {
-            // Safe music trigger that won't freeze the button
-            var track = document.getElementById('bg-music');
-            if (track && track.paused) {
+        function dropParticles() {
+            const shapes = ['💎', '✨', '⭐', '🎈', '🎉', '👑'];
+            for (let i = 0; i < 40; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.pointerEvents = 'none';
+                particle.style.bottom = '-50px';
+                particle.style.animation = 'gravityFall 4.5s linear infinite';
+                particle.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                particle.style.fontSize = Math.floor(Math.random() * 20 + 20) + 'px';
+                document.body.appendChild(particle);
+            }
+        }
+    </script>
+</body>
+</html>
