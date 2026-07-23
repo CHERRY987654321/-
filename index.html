@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bisma! 🎮✨</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #1a0826 0%, #05010d 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(20, 10, 35, 0.8);
+            border: 2px solid #ffaa00;
+            border-radius: 20px;
+            box-shadow: 0 0 30px #ff5500;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 10;
+        }
+
+        .ff-badge {
+            background: linear-gradient(135deg, #ff5500, #ffaa00);
+            color: black;
+            padding: 6px 15px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 0 0 10px #ffaa00;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: #ffaa00;
+            text-shadow: 0 0 15px #ff5500;
+            margin: 15px 0 5px 0;
+        }
+
+        .date-tag {
+            font-size: 20px;
+            color: #00ffcc;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ffcc;
+            margin-bottom: 25px;
+        }
+
+        .letter-box {
+            background: rgba(0, 0, 0, 0.6);
+            border-left: 4px solid #ff5500;
+            padding: 20px;
+            border-radius: 0 15px 15px 0;
+            text-align: left;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .highlight {
+            color: #ffaa00;
+            font-weight: bold;
+        }
+
+        .btn-loot {
+            background: linear-gradient(to bottom, #ffaa00, #ff5500);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 85, 0, 0.5);
+            margin-top: 25px;
+            transition: 0.3s;
+        }
+
+        .btn-loot:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ffaa00;
+        }
+
+        .surprise-section {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(0, 255, 204, 0.1);
+            border: 2px dashed #00ffcc;
+            border-radius: 15px;
+        }
+
+        /* Balloon Animation Styling */
+        .balloon {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background: #ff5500;
+            border-radius: 50%;
+            bottom: -50px;
+            opacity: 0.7;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Balloons Container -->
+    <div id="balloon-container"></div>
+
+    <div class="container">
+        <div class="ff-badge">🏆 LEVEL UP: AGE +1 🏆</div>
+        <h1>💥 BISMA 💥</h1>
+        <div class="date-tag">✨ Happy Birthday - 24th July ✨</div>
+        
+        <div class="letter-box">
+            🎮 <b>To My Favorite Free Fire Queen,</b><br><br>
+            Hum dono <span class="highlight">Free Fire</span> ke lobby mein mile the, aur tab mujhe nahi pata tha ki game khelte khelte tum meri itni special online best friend ban jaogi! <br><br>
+            Duriya chahe jitni bhi hon (Long Distance Friendship), hamari dosti hamesha Grandmaster rank ki tarah top par rahegi. Jab tak tum squad mein ho, har match mein Booyah pakka hai! 🌐💞
+        </div>
+
+        <button class="btn-loot" onclick="claimLoot()">Open Birthday Airdrop 🎁</button>
+
+        <div class="surprise-section" id="lootBox">
+            <h2 style="color: #00ffcc; margin: 0; font-size: 30px;">🎉 BOOYAH! 🎉</h2>
+            <p style="font-size: 19px; line-height: 1.6; margin-top: 15px;">
+                "Wishing you the happiest birthday ever, my crime partner! May God bless you with endless happiness, diamonds, success, and everything you wish for. Hamesha aise hi rush game-play karti raho aur khush raho!" 🤗❤️
+            </p>
+            <p style="font-size: 14px; color: #ffaa00; font-style: italic; margin-top: 20px;">~ Created with love by your best gaming friend 🤝</p>
+        </div>
+    </div>
+
+    <script>
+        function claimLoot() {
+            document.getElementById('lootBox').style.display = 'block';
+            document.getElementById('lootBox').scrollIntoView({ behavior: 'smooth' });
+            createBalloons();
+        }
+
+        function createBalloons() {
+            const container = document.getElementById('balloon-container');
+            const colors = ['#ff5500', '#ffaa00', '#00ffcc', '#ff007f', '#ffff00'];
+            for (let i = 0; i < 30; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                balloon.style.left = Math.random() * 100 + 'vw';
+                balloon.style.animationDelay = Math.random() * 3 + 's';
+                balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                container.appendChild(balloon);
+            }
+        }
+    </script>
+</body>
+</html>
