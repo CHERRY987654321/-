@@ -13,7 +13,7 @@
         .box { background: rgba(255, 255, 255, 0.6); border-radius: 15px; padding: 20px; text-align: left; line-height: 1.7; margin: 20px 0; border: 1px solid #ffccd5; }
         .card { background: #fff; border: 1px solid #ffb3c6; padding: 12px; margin: 10px 0; border-radius: 12px; font-weight: bold; cursor: pointer; text-align: left; }
         .desc { display: none; font-weight: normal; color: #6c5862; margin-top: 5px; border-top: 1px dashed #ffccd5; padding-top: 5px; }
-        .btn { background: linear-gradient(135deg, #ff85a2, #ff5c8a); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: bold; border-radius: 50px; cursor: pointer; margin-top: 15px; display: inline-block; text-decoration: none; }
+        .btn { background: linear-gradient(135deg, #ff85a2, #ff5c8a); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: bold; border-radius: 50px; cursor: pointer; margin-top: 15px; display: inline-block; }
         .heart { position: fixed; pointer-events: none; bottom: -50px; animation: floatUp 4s linear infinite; z-index: 999; }
         @keyframes floatUp { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-110vh); opacity: 0; } }
     </style>
@@ -149,3 +149,5 @@
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
                 document.getElementById("timerDisplay").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+            }, 1000);
+        }
