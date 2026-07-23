@@ -6,31 +6,31 @@
     <title>Happy Birthday Janemmmmm 🌸✨</title>
     <style>
         body { margin: 0; padding: 0; background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%); color: #4a3b42; font-family: sans-serif; text-align: center; min-height: 100vh; }
-        .container { width: 90%; max-width: 540px; margin: 40px auto; padding: 30px 20px; background: rgba(255, 255, 255, 0.75); border: 2px solid #fff; border-radius: 24px; box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4); backdrop-filter: blur(10px); }
-        .page { display: none; animation: f 0.5s ease-out forwards; }
-        .active { display: block; }
-        @keyframes f { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .container { width: 90%; max-width: 540px; margin: 40px auto; padding: 30px 20px; background: rgba(255, 255, 255, 0.75); border: 2px solid #fff; border-radius: 24px; box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4); backdrop-filter: blur(10px); box-sizing: border-box; }
+        .page { display: none; }
+        .active-page { display: block; }
         h1 { color: #ff5c8a; font-size: 28px; margin: 10px 0; }
         .box { background: rgba(255, 255, 255, 0.6); border-radius: 15px; padding: 20px; text-align: left; line-height: 1.7; margin: 20px 0; border: 1px solid #ffccd5; }
         .card { background: #fff; border: 1px solid #ffb3c6; padding: 12px; margin: 10px 0; border-radius: 12px; font-weight: bold; cursor: pointer; text-align: left; }
         .desc { display: none; font-weight: normal; color: #6c5862; margin-top: 5px; border-top: 1px dashed #ffccd5; padding-top: 5px; }
-        .btn { background: linear-gradient(135deg, #ff85a2, #ff5c8a); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: bold; border-radius: 50px; cursor: pointer; margin-top: 15px; }
-        .heart { position: fixed; pointer-events: none; bottom: -50px; animation: floatUp 4s linear infinite; }
+        .btn { background: linear-gradient(135deg, #ff85a2, #ff5c8a); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: bold; border-radius: 50px; cursor: pointer; margin-top: 15px; display: inline-block; }
+        .heart { position: fixed; pointer-events: none; bottom: -50px; animation: floatUp 4s linear infinite; z-index: 999; }
         @keyframes floatUp { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-110vh); opacity: 0; } }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- LANDING -->
-        <div id="p1" class="page active">
-            <div style="font-size:50px;">✨🎂🐈🌸</div>
+        
+        <!-- PAGE 1: LANDING -->
+        <div id="page1" class="page active-page">
+            <div style="font-size:50px;">✨🎂🌸✨</div>
             <h1>Happy Birthday Janemmmmm 💖</h1>
             <p style="color:#ff758f; font-weight:bold;">"Made with endless duas, love and countless smiles."</p>
-            <button class="btn" onclick="go(2)">Open Your Surprise 💝</button>
+            <button class="btn" onclick="nextPage('page1', 'page2')">Open Your Surprise 💝</button>
         </div>
 
-        <!-- PAGE 1 -->
-        <div id="p2" class="page">
+        <!-- PAGE 2 -->
+        <div id="page2" class="page">
             <h1>A Little Message Before We Start 🌸</h1>
             <div class="box" style="text-align: center; font-weight: bold;">
                 "Today isn't just another day.<br><br>
@@ -38,109 +38,114 @@
                 Take a deep breath... Smile...<br><br>
                 Because today is all about YOU."
             </div>
-            <button class="btn" onclick="go(3)">Next 👉🏻👈🏻</button>
+            <button class="btn" onclick="nextPage('page2', 'page3')">Next 👉🏻👈🏻</button>
         </div>
 
-        <!-- PAGE 2 -->
-        <div id="p3" class="page">
+        <!-- PAGE 3 -->
+        <div id="page3" class="page">
             <h1>Alhamdulillah 🤍</h1>
             <div class="box" style="text-align: center;">
                 O Allah, I am endlessly grateful for the precious moment You made our paths cross. Thank you for bringing my beautiful best friend into my life.<br><br>
                 Her loyal friendship is truly one of the most beautiful and pure blessings I have ever received. 💕
             </div>
-            <button class="btn" onclick="go(4)">Why You're Special 🌸</button>
-        </div>
-
-        <!-- PAGE 3 -->
-        <div id="p4" class="page">
-            <h1>Why You're So Special 🌸</h1>
-            <p style="font-size:12px; color:#ff758f; margin-top:-10px;">(Tap to reveal details ✨)</p>
-            <div class="card" onclick="t(this)">🎈 Patient Listener <div class="desc">You always listen so patiently to all my silly rants and long stories.</div></div>
-            <div class="card" onclick="t(this)">🌸 Deeply Understood <div class="desc">You make me feel completely understood even without words.</div></div>
-            <div class="card" onclick="t(this)">🕊️ Voice of Peace <div class="desc">Your words always bring an instant sense of peace to my days.</div></div>
-            <div class="card" onclick="t(this)">🫂 Safe Comfort <div class="desc">You always comfort and hold me close in my difficult moments.</div></div>
-            <div class="card" onclick="t(this)">🏠 My Safe Place <div class="desc">You are my ultimate safe place, my home away from home.</div></div>
-            <button class="btn" onclick="go(5)">Next Page 🤲🏻</button>
+            <button class="btn" onclick="nextPage('page3', 'page4')">Why You're Special 🌸</button>
         </div>
 
         <!-- PAGE 4 -->
-        <div id="p5" class="page">
-            <h1>My Duas For You 🤲🏻</h1>
-            <p style="font-size:12px; color:#ff758f; margin-top:-10px;">(Tap to unlock prayers 🤍)</p>
-            <div class="card" onclick="t(this)">✨ Precious Happiness <div class="desc">May Allah bless you with all the infinite happiness of life. Ameen.</div></div>
-            <div class="card" onclick="t(this)">🛡️ Divine Protection <div class="desc">May Allah protect you always from every evil eye and sorrow. Ameen.</div></div>
-            <div class="card" onclick="t(this)">📚 Academic Success <div class="desc">May Allah grant you exceptional success in your studies. Ameen.</div></div>
-            <div class="card" onclick="t(this)">🌐 Meet Up Soon <div class="desc">May Allah collapse this long distance and let us meet very soon, InshaAllah!</div></div>
-            <div class="card" onclick="t(this)">👭 Bond Forever <div class="desc">May our beautiful friendship remain protected and strong forever. Ameen.</div></div>
-            <button class="btn" onclick="go(6)">One More Thing... 💌</button>
+        <div id="page4" class="page">
+            <h1>Why You're So Special 🌸</h1>
+            <p style="font-size:12px; color:#ff758f; margin-top:-10px;">(Tap each card to reveal details ✨)</p>
+            <div class="card" onclick="toggleCardDetail(this)">🎈 Patient Listener <div class="desc">You always listen so patiently to all my silly rants and long stories.</div></div>
+            <div class="card" onclick="toggleCardDetail(this)">🌸 Deeply Understood <div class="desc">You make me feel completely understood even without words.</div></div>
+            <div class="card" onclick="toggleCardDetail(this)">🕊️ Voice of Peace <div class="desc">Your words always bring an instant sense of peace to my days.</div></div>
+            <div class="card" onclick="toggleCardDetail(this)">🫂 Safe Comfort <div class="desc">You always comfort and hold me close in my difficult moments.</div></div>
+            <div class="card" onclick="toggleCardDetail(this)">🏠 My Safe Place <div class="desc">You are my ultimate safe place, my home away from home.</div></div>
+            <button class="btn" onclick="nextPage('page4', 'page5')">Next Page 🤲🏻</button>
         </div>
 
         <!-- PAGE 5 -->
-        <div id="p6" class="page">
+        <div id="page5" class="page">
+            <h1>My Duas For You 🤲🏻</h1>
+            <p style="font-size:12px; color:#ff758f; margin-top:-10px;">(Tap each card to unlock prayers 🤍)</p>
+            <div class="card" onclick="toggleCardDetail(this)">✨ Precious Happiness <div class="desc">May Allah bless you with all the infinite happiness of life. Ameen.</div></div>
+            <div class="card" onclick="toggleCardDetail(this)">🛡️ Divine Protection <div class="desc">May Allah protect you always from every evil eye and sorrow. Ameen.</div></div>
+            <div class="card" onclick="toggleCardDetail(this)">📚 Academic Success <div class="desc">May Allah grant you exceptional success in your studies. Ameen.</div></div>
+            <div class="card" onclick="toggleCardDetail(this)">🌐 Meet Up Soon <div class="desc">May Allah collapse this long distance and let us meet very soon, InshaAllah!</div></div>
+            <div class="card" onclick="toggleCardDetail(this)">👭 Bond Forever <div class="desc">May our beautiful friendship remain protected and strong forever. Ameen.</div></div>
+            <button class="btn" onclick="nextPage('page5', 'page6')">One More Thing... 💌</button>
+        </div>
+
+        <!-- PAGE 6 -->
+        <div id="page6" class="page">
             <h1>One More Thing... 💌</h1>
             <div class="box" style="font-size: 14px; border-left: 4px solid #ff5c8a;">
                 <b>Me:</b> Janemmmmm!!! Happy Birthday again! 🥳😭🥹 Guyzzzz look who leveled up today! Meri pyari Bhalouuuu hnji 👉🏻👈🏻<br><br>
                 <b>Me:</b> Thank you for existing. Thank you for being my safe place. I am so deeply blessed that Allah made our paths cross. 😂🤍🌸💞🫂<br><br>
                 <b>Me:</b> May Allah bless you with all the happiness. I can't wait for the day we finally break this long distance and meet in person, InshaAllah! Direct hug karni h! 😂❤️
             </div>
-            <button class="btn" onclick="go(7)">One Final Gift 🎉</button>
+            <button class="btn" onclick="nextPage('page6', 'page7')">One Final Gift 🎉</button>
         </div>
 
-        <!-- FINAL PAGE -->
-        <div id="p7" class="page">
-            <div style="font-size:50px;">🐈🎈✨</div>
-            <h1 style="color: #ff0055;">🎉 HAPPY BIRTHDAY JANEMMMMM 🎂💖</h1>
-            <button class="btn" id="lbl" onclick="showEnd()">One Last Click 💝</button>
-            <div id="end" style="display:none;" class="box">
+        <!-- PAGE 7: FINAL -->
+        <div id="page7" class="page">
+            <div style="font-size:50px;">✨🎈✨</div>
+            <h1 style="color: #ff0055;">🎉 HAPPY BIRTHDAY JANEMMMMM <b>LARA</b> 🎂💖</h1>
+            <button class="btn" id="lastBtn" onclick="triggerClimax()">One Last Click 💝</button>
+            <div id="climaxBox" style="display:none;" class="box">
                 <p style="font-weight:bold; text-align:center;">
                     "I'll always pray for your happiness. Stay blessed. Stay smiling. Stay exactly the way you are. Happy Birthday, my precious friend."
                 </p>
                 <div style="border-top:1px dashed #ff85a2; padding-top:10px; text-align:center; font-size:14px; color:#ff5c8a; font-weight:bold;">
                     Our first meetup countdown starts now... InshaAllah ❤️
-                    <div id="timer" style="font-size:18px; margin-top:5px; color:#ff0055;">Loading...</div>
+                    <div id="timerDisplay" style="font-size:18px; margin-top:5px; color:#ff0055; font-weight: bold;">Loading Countdown...</div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <script>
-        function go(num) {
-            for (let i=1; i<=7; i++) { document.getElementById('p'+i).classList.remove('active'); }
-            document.getElementById('p'+num).classList.add('active');
+        function nextPage(currentId, nextId) {
+            document.getElementById(currentId).style.display = 'none';
+            document.getElementById(nextId).style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        function t(el) {
-            var d = el.querySelector('.desc');
-            if (d.style.display === "block") { d.style.display = "none"; el.style.background = "#fff"; }
-            else { d.style.display = "block"; el.style.background = "#fff0f3"; }
+
+        function toggleCardDetail(cardElement) {
+            var detailBox = cardElement.querySelector('.desc');
+            if (detailBox.style.display === "block") {
+                detailBox.style.display = "none";
+                cardElement.style.background = "#fff";
+            } else {
+                detailBox.style.display = "block";
+                cardElement.style.background = "#fff0f3";
+            }
         }
-        function showEnd() {
-            document.getElementById('end').style.display = "block";
-            document.getElementById('lbl').style.display = "none";
-            setInterval(rain, 200);
-            countdown();
+
+        function triggerClimax() {
+            document.getElementById('climaxBox').style.display = "block";
+            document.getElementById('lastBtn').style.display = "none";
+            setInterval(createFloatingHearts, 200);
+            startTimer();
         }
-        function rain() {
-            const sym = ['💖', '🌸', '✨', '🎈', '🧸', '👑'];
-            const p = document.createElement('div');
-            p.classList.add('heart');
-            p.innerHTML = sym[Math.floor(Math.random()*sym.length)];
-            p.style.left = Math.random()*100 + 'vw';
-            p.style.fontSize = Math.floor(Math.random()*15 + 20) + 'px';
-            document.body.appendChild(p);
-            setTimeout(() => { p.remove(); }, 4000);
+
+        function createFloatingHearts() {
+            const symbols = ['💖', '🌸', '✨', '🎈', '🧸', '👑'];
+            const heartElement = document.createElement('div');
+            heartElement.classList.add('heart');
+            heartElement.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            heartElement.style.left = Math.random() * 100 + 'vw';
+            heartElement.style.fontSize = Math.floor(Math.random() * 15 + 20) + 'px';
+            document.body.appendChild(heartElement);
+            setTimeout(() => { heartElement.remove(); }, 4000);
         }
-        function countdown() {
-            const target = new Date("July 24, 2027 00:00:00").getTime();
+
+        function startTimer() {
+            const targetTime = new Date("July 24, 2027 00:00:00").getTime();
             setInterval(function() {
-                const diff = target - new Date().getTime();
-                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const s = Math.floor((diff % (1000 * 60)) / 1000);
-                document.getElementById("timer").innerHTML = d + "d " + h + "h " + m + "m " + s + "s";
-            }, 1000);
-        }
-    </script>
-</body>
-</html>
+                const diff = targetTime - new Date().getTime();
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById("timerDisplay").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
