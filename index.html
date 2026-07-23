@@ -3,224 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission Lara: Grandmaster Birthday! 🎮✨</title>
+    <title>Happy Birthday Janemmmmm 🌸✨</title>
     <style>
+        @import url('https://googleapis.com');
+
         body {
-            margin: 0;
-            padding: 0;
-            background: #03010a;
-            background-image: radial-gradient(circle, #2a0845 0%, #03010a 100%);
-            color: #ffffff;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            text-align: center;
+            margin: 0; padding: 0;
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 50%, #fbd3e9 100%);
+            color: #4a3b42;
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
             overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Premium Floating Elements & Ambient Effects */
+        .ambient-hearts {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 1;
+        }
+
+        #audio-controls {
+            position: fixed; bottom: 20px; right: 20px;
+            background: rgba(255, 182, 193, 0.85);
+            padding: 12px 20px; border-radius: 30px;
+            font-size: 14px; font-weight: bold; cursor: pointer;
+            z-index: 100; box-shadow: 0 4px 15px rgba(255,105,180,0.25);
+            border: 1px solid rgba(255,255,255,0.6);
+            backdrop-filter: blur(5px);
         }
 
         .container {
-            max-width: 620px;
-            margin: 40px auto;
-            padding: 40px 25px;
-            background: rgba(15, 5, 28, 0.9);
-            border: 2px solid #ffaa00;
-            border-radius: 24px;
-            box-shadow: 0 0 40px rgba(255, 85, 0, 0.4);
-            backdrop-filter: blur(12px);
-            position: relative;
+            width: 90%; max-width: 580px;
+            margin: 20px auto; padding: 35px 25px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 32px;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
+            backdrop-filter: blur(15px);
+            position: relative; z-index: 10;
+            box-sizing: border-box;
         }
 
-        .page {
-            display: none;
-            animation: emoteEntry 0.5s ease-out forwards;
-        }
-
+        /* Core Engine: Soft Kawaii Page Navigation */
+        .page { display: none; }
         .active-page {
             display: block;
+            animation: kawaiiTransition 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
         }
 
-        @keyframes emoteEntry {
-            from { opacity: 0; transform: scale(0.9) translateY(20px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        .badge-gaming {
-            background: linear-gradient(135deg, #ff0055, #ffaa00);
-            color: white;
-            padding: 8px 20px;
-            font-weight: 900;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 6px;
-            display: inline-block;
-            box-shadow: 0 0 15px #ff0055;
-            margin-bottom: 20px;
+        @keyframes kawaiiTransition {
+            0% { opacity: 0; transform: scale(0.92) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         h1 {
-            font-size: 42px;
-            color: #ffaa00;
-            text-shadow: 0 0 20px #ff5500;
-            margin: 10px 0;
-            font-weight: 900;
+            font-family: 'Fredoka One', cursive;
+            font-size: 34px; color: #ff5c8a;
+            text-shadow: 2px 2px 0px #fff;
+            margin: 10px 0; line-height: 1.3;
         }
 
         .subtitle {
-            font-size: 19px;
-            color: #00ffcc;
-            font-weight: bold;
-            margin-bottom: 25px;
+            font-size: 17px; color: #ff758f;
+            font-weight: bold; font-style: italic; margin-bottom: 25px;
         }
 
-        .content-box {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 22px;
-            text-align: left;
-            line-height: 1.8;
-            font-size: 17px;
-            margin: 20px 0;
+        .glass-box {
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 20px; padding: 22px;
+            text-align: left; line-height: 1.8;
+            font-size: 16px; margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.15);
         }
 
-        .nickname-tag {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid #ffaa00;
-            padding: 12px;
-            margin: 12px 0;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        /* Interactive Grid Style for Page 3 & Page 4 */
+        .card-grid {
+            max-height: 320px; overflow-y: auto;
+            margin: 20px 0; padding-right: 5px;
         }
 
-        .btn-gamer {
-            background: linear-gradient(180deg, #ffbb00, #ff4400);
-            color: white;
-            border: none;
-            padding: 16px 45px;
-            font-size: 19px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(255, 68, 0, 0.4);
-            margin-top: 15px;
+        .interactive-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1.5px solid #ffb3c6;
+            padding: 15px; margin: 12px 0;
+            border-radius: 16px; font-size: 16px; font-weight: bold;
+            display: flex; align-items: center; gap: 15px;
+            cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255,182,193,0.1);
         }
 
-        .particle {
-            position: absolute;
-            pointer-events: none;
-            bottom: -50px;
-            animation: gravityFall 4.5s linear infinite;
+        .interactive-card:hover {
+            transform: translateY(-2px);
+            background: #fff0f3; border-color: #ff758f;
         }
 
-        @keyframes gravityFall {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-100vh); opacity: 0; }
+        .card-detail {
+            display: none; font-weight: normal; font-size: 15px;
+            color: #6c5862; margin-top: 8px; line-height: 1.5;
+            border-top: 1px dashed #ffccd5; padding-top: 8px;
+        }
+
+        .btn-kawaii {
+            background: linear-gradient(135deg, #ff85a2, #ff5c8a);
+            color: white; border: none; padding: 15px 45px;
+            font-size: 18px; font-weight: bold; border-radius: 50px;
+            cursor: pointer; box-shadow: 0 6px 20px rgba(255, 92, 138, 0.4);
+            margin-top: 15px; transition: 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .btn-kawaii:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 25px rgba(255, 92, 138, 0.6);
+        }
+
+        .kitten-illustration { font-size: 65px; margin: 15px 0; }
+
+        /* Floating Hearts & Rainfall Animation */
+        .heart-particle {
+            position: absolute; pointer-events: none;
+            bottom: -50px; animation: floatUpward 4.5s linear infinite;
+        }
+
+        @keyframes floatUpward {
+            0% { transform: translateY(0) rotate(0deg) scale(0.6); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+
+        /* Custom Scrollbar for list grids */
+        .card-grid::-webkit-scrollbar { width: 6px; }
+        .card-grid::-webkit-scrollbar-track { background: rgba(255,255,255,0.3); border-radius: 10px; }
+        .card-grid::-webkit-scrollbar-thumb { background: #ffccd5; border-radius: 10px; }
+
+        .countdown-style {
+            font-size: 20px; font-weight: bold; color: #ff5c8a;
+            margin-top: 15px; text-shadow: 1px 1px #fff;
         }
     </style>
 </head>
 <body>
 
+    <div class="ambient-hearts" id="hearts-layer"></div>
+
+    <!-- Dreamy Lofi Music Player Component -->
+    <div id="audio-controls" onclick="manageMusic()">🎵 Dreamy Lofi On</div>
+    <audio id="bg-dream-track" loop>
+        <source src="https://soundhelix.com" type="audio/mpeg">
+    </audio>
+
     <div class="container">
 
-        <!-- PAGE 1 -->
-        <div id="p1" class="page active-page">
-            <div class="badge-gaming">🎮 SECURITY CHECK: OK</div>
-            <h1>BATTLEGROUND LOBBY</h1>
-            <p class="subtitle">🎯 Access Granted to Squad Member</p>
-            <div class="content-box" style="text-align: center;">
-                <span style="font-size: 50px;">👑</span><br><br>
-                Hey <strong>Bisma (Lara)</strong>! Aapka gaming partner aapka wait kar raha hai. Ek bohot hi advanced digital airdrop special aapke liye design kiya gaya hai.<br><br>
-                Ready ho rank push aur surprises ke liye? Chalein match start karte hain!
-            </div>
-            <button class="btn-gamer" onclick="navigate(2)">Start Birthday Match ⚔️</button>
+        <!-- ================= LANDING SCREEN ================= -->
+        <div id="landing" class="page active-page">
+            <div class="kitten-illustration">✨🎂🐈🌸</div>
+            <h1>Happy Birthday Janemmmmm 💖</h1>
+            <p class="subtitle">"Made with endless duas, love and countless smiles."</p>
+            <button class="btn-kawaii" onclick="shiftPage('p1')">Open Your Surprise 💝</button>
         </div>
 
-        <!-- PAGE 2 -->
+        <!-- ================= PAGE 1 ================= -->
+        <div id="p1" class="page">
+            <h1>A Little Message Before We Start 🌸</h1>
+            <div class="glass-box" style="text-align: center; font-size: 18px; font-weight: bold;">
+                "Today isn't just another day.<br><br>
+                Today is the day Allah blessed this world with someone very special.<br><br>
+                Take a deep breath...<br><br>
+                Smile...<br><br>
+                Because today is all about YOU."
+            </div>
+            <button class="btn-kawaii" onclick="shiftPage('p2')">Next 👉🏻👈🏻</button>
+        </div>
+
+        <!-- ================= PAGE 2 ================= -->
         <div id="p2" class="page">
-            <div class="badge-gaming">🌟 CODE NAME VERIFICATION</div>
-            <h1>MY FAVORITE PLAYER</h1>
-            <p class="subtitle">💖 One Person, Countless Vibes</p>
-            <div class="nickname-tag"><span>🧸</span> <span><b>Bhalouuu:</b> My softest, cutest long-distance friend!</span></div>
-            <div class="nickname-tag" style="border-color: #00ffcc;"><span>✨</span> <span><b>Bismuuu:</b> The girl who makes gaming infinite fun!</span></div>
-            <div class="nickname-tag" style="border-color: #ff007f;"><span>❤️</span> <span><b>Janemmm:</b> Meri life ki sabse special aur trusted partner!</span></div>
-            <div class="nickname-tag" style="border-color: #ffff00;"><span>⚡</span> <span><b>Free Fire Pro:</b> Squeezer of enemy squads and headshot queen!</span></div>
-            <button class="btn-gamer" onclick="navigate(3)">Check Friendship Stats 📈</button>
+            <div class="kitten-illustration">🤲🏻🤍✨</div>
+            <h1>Alhamdulillah 🤍</h1>
+            <div class="glass-box" style="font-size: 17px; text-align: center;">
+                O Allah, I am endlessly grateful for the precious moment You made our paths cross. Thank you for bringing my beautiful best friend into my life. <br><br>
+                Her loyal friendship is truly one of the most beautiful and pure blessings I have ever received in this world. Alhamdulillah for everything! 💕
+            </div>
+            <button class="btn-kawaii" onclick="shiftPage('p3')">Why You're Special 🌸</button>
         </div>
 
-        <!-- PAGE 3 -->
+        <!-- ================= PAGE 3 ================= -->
         <div id="p3" class="page">
-            <div class="badge-gaming">🌐 MATCH TIMELINE: LOADED</div>
-            <h1>OUR SQUAD HISTORY</h1>
-            <p class="subtitle">🤝 From Virtual Match to Best Friends</p>
-            <div class="content-box">
-                🕹️ <strong>The First Drop:</strong> Hum dono <b>Free Fire</b> ke lobby mein mile the. Ek simple random gameplay se lekar aaj meri sabse close online best friend banne tak, <strong>Bisma (Lara)</strong> tumne har stage par mera sath diya hai!<br><br>
-                🌌 <strong>Long Distance Connection:</strong> Duriyan chahe jitni bhi hon, hamari screen-to-screen dosti ne hamesha har mushkil ko beat kiya hai. Jab bhi dushmano par rush karna ho ya baatein karni hon, tum hamesha ready rehti ho!
+            <h1>Why You're So Special 🌸</h1>
+            <p style="font-size: 14px; margin-top: -15px; color: #ff758f;">(Tap each card to reveal sweet thoughts ✨)</p>
+            <div class="card-grid">
+                <div class="interactive-card" onclick="toggleCard(this)">🎈 Patient Listener <div class="card-detail">You always listen so patiently to all my silly rants and long stories without ever getting bored.</div></div>
+                <div class="interactive-card" onclick="toggleCard(this)">🌸 Deeply Understood <div class="card-detail">You make me feel completely understood even when I can't put my feelings into the right words.</div></div>
+                <div class="interactive-card" onclick="toggleCard(this)">🕊️ Voice of Peace <div class="card-detail">Your voice and your words always bring an instant sense of peace to my chaotic days.</div></div>
+                <div class="interactive-card" onclick="toggleCard(this)">🎉 Pure Celebration <div class="card-detail">You genuinely celebrate my small and big happiness like it's your own achievement.</div></div>
+                <div class="interactive-card" onclick="toggleCard(this)">🫂 Safe Comfort <div class="card-detail">You always comfort and hold me close in my most difficult and vulnerable moments.</div></div>
+                <div class="interactive-card" onclick="toggleCard(this)">⭐ Never Judgmental <div class="card-detail">You accept me completely for who I am and never judge any of my flaws or mistakes.</div></div>
+                <div class="interactive-card" onclick="toggleCard(this)">💞 Respectful Heart <div class="card-detail">You deeply respect my opinions and choices, making me feel valued every single day.</div></div>
+                <div class="interactive-card" onclick="toggleCard(this)">🏠 My Safe Place <div class="card-detail">You are my ultimate safe place, my home away from home, and my true comfort zone.</div></div>
             </div>
-            <button class="btn-gamer" onclick="navigate(4)">Unlock The Gift 🎁</button>
+            <button class="btn-kawaii" onclick="shiftPage('p4')">Next Page 🤲🏻</button>
         </div>
 
-        <!-- PAGE 4 -->
+        <!-- ================= PAGE 4 ================= -->
         <div id="p4" class="page">
-            <div class="badge-gaming">🔥 LEVEL 4: THE BOOYAH BLAST</div>
-            <h1 style="font-size: 40px; color: #00ffcc; text-shadow: 0 0 25px #00ffcc;">🎉 HAPPY BIRTHDAY BISMA 🎉</h1>
-            <p class="subtitle">🎂 LEVEL UP CELEBRATION - 24th JULY 👑</p>
-            <div style="font-size: 70px; margin: 20px 0;">🎂🍰✨</div>
-            <div class="content-box" style="border-left: 5px solid #ffaa00;">
-                Wishing you the happiest, brightest, and most legendary birthday ever, my dear <strong>Bisma (Lara)</strong>! 🎉 <br><br>
-                Duas hain ke aapki life diamonds, infinite happiness, top ranks aur kamyabi se bhar jaye. Tum jaisa loyal aur pure gaming partner milna kismat ki baat hai. Hamesha haste muskurate raho! 🤗❤️
-            </div>
-            <button class="btn-gamer" onclick="navigate(5)">Claim Free Diamonds 💎</button>
-        </div>
-
-        <!-- PAGE 5 -->
-        <div id="p5" class="page">
-            <div class="badge-gaming">💎 LEVEL 5: GRANDMASTER REWARD</div>
-            <h1>DIAMOND AIRDROP SUCCESSFUL</h1>
-            <p class="subtitle">✨ Look at the Screen! ✨</p>
-            <div class="content-box" style="text-align: center; font-size: 19px;">
-                🥳 <strong>BOOYAH! MISSION COMPLISHED!</strong><br><br>
-                Screen par diamonds, balloons aur confetti ki baarish sirf aur sirf hamari <strong>Free Fire Pro Queen Bismuuu (Lara)</strong> ke liye hai! <br><br>
-                Thank you hamesha ek itna pyaara dost banne ke liye. Party dena mat bhoolna! 🎁🤝
-            </div>
-            <p style="font-size: 13px; color: #ffaa00; font-style: italic; margin-top: 30px;">~ Designed with pure heart & coding by your absolute best friend 💖</p>
-        </div>
-
-    </div>
-
-    <script>
-        function navigate(pageNumber) {
-            for (let i = 1; i <= 5; i++) {
-                var p = document.getElementById('p' + i);
-                if(p) p.style.display = 'none';
-            }
-            var nextP = document.getElementById('p' + pageNumber);
-            if(nextP) nextP.style.display = 'block';
-
-            if (pageNumber === 4 || pageNumber === 5) {
-                dropParticles();
-            }
-        }
-
-        function dropParticles() {
-            const shapes = ['💎', '✨', '⭐', '🎈', '🎉', '👑'];
-            for (let i = 0; i < 40; i++) {
-                const particle = document.createElement('div');
-                particle.style.position = 'absolute';
-                particle.style.pointerEvents = 'none';
-                particle.style.bottom = '-50px';
-                particle.style.animation = 'gravityFall 4.5s linear infinite';
-                particle.innerHTML = shapes[Math.floor(Math.random() * shapes.length)];
-                particle.style.left = Math.random() * 100 + 'vw';
-                particle.style.animationDelay = Math.random() * 2 + 's';
-                particle.style.fontSize = Math.floor(Math.random() * 20 + 20) + 'px';
-                document.body.appendChild(particle);
-            }
-        }
-    </script>
-</body>
-</html>
+            <h1>My Duas For You 🤲🏻</h1>
