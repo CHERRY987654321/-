@@ -42,7 +42,6 @@
             position: relative;
         }
 
-        /* 5-Pages Engine & Free Fire Emote Style Entry */
         .page {
             display: none;
             animation: emoteEntry 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -132,7 +131,6 @@
             box-shadow: 0 0 25px #ffaa00;
         }
 
-        /* Falling Diamonds & Rewards Styling */
         .particle {
             position: absolute;
             pointer-events: none;
@@ -149,7 +147,6 @@
 </head>
 <body>
 
-    <!-- Gaming Music Track -->
     <div id="audio-controls" onclick="handleMusic()">🎵 Play Game Sound</div>
     <audio id="bg-music" loop>
         <source src="https://soundhelix.com" type="audio/mpeg">
@@ -157,34 +154,32 @@
 
     <div class="container">
 
-        <!-- ================= PAGE 1: LOBBY ENTER ================= -->
+        <!-- ================= PAGE 1 ================= -->
         <div id="p1" class="page active-page">
             <div class="badge-gaming">🎮 SECURITY CHECK: OK</div>
             <h1>BATTLEGROUND LOBBY</h1>
             <p class="subtitle">🎯 Access Granted to Squad Member</p>
             <div class="content-box" style="text-align: center;">
                 <span style="font-size: 50px;">👑</span><br><br>
-                Hey <strong>Bisma (Lara)</strong>! Aapka gaming partner aapka wait kar raha hai. Ek bohot hi advanced digital airdrop special aapke liye design kiya ghar se bheja gaya hai.<br><br>
+                Hey <strong>Bisma (Lara)</strong>! Aapka gaming partner aapka wait kar raha hai. Ek bohot hi advanced digital airdrop special aapke liye design kiya gaya hai.<br><br>
                 Ready ho rank push aur surprises ke liye? Chalein match start karte hain!
             </div>
             <button class="btn-gamer" onclick="navigate(2)">Start Birthday Match ⚔️</button>
         </div>
 
-        <!-- ================= PAGE 2: NICKNAMES REVEAL ================= -->
+        <!-- ================= PAGE 2 ================= -->
         <div id="p2" class="page">
             <div class="badge-gaming">🌟 CODE NAME VERIFICATION</div>
             <h1>MY FAVORITE PLAYER</h1>
             <p class="subtitle">💖 One Person, Countless Vibes</p>
-            
             <div class="nickname-tag"><span>🧸</span> <span><b>Bhalouuu:</b> My softest, cutest long-distance friend!</span></div>
             <div class="nickname-tag" style="border-color: #00ffcc;"><span>✨</span> <span><b>Bismuuu:</b> The girl who makes gaming infinite fun!</span></div>
             <div class="nickname-tag" style="border-color: #ff007f;"><span>❤️</span> <span><b>Janemmm:</b> Meri life ki sabse special aur trusted partner!</span></div>
             <div class="nickname-tag" style="border-color: #ffff00;"><span>⚡</span> <span><b>Free Fire Pro:</b> Squeezer of enemy squads and headshot queen!</span></div>
-            
             <button class="btn-gamer" onclick="navigate(3)">Check Friendship Stats 📈</button>
         </div>
 
-        <!-- ================= PAGE 3: OUR TIMELINE ================= -->
+        <!-- ================= PAGE 3 ================= -->
         <div id="p3" class="page">
             <div class="badge-gaming">🌐 MATCH TIMELINE: LOADED</div>
             <h1>OUR SQUAD HISTORY</h1>
@@ -196,14 +191,12 @@
             <button class="btn-gamer" onclick="navigate(4)">Unlock The Gift 🎁</button>
         </div>
 
-        <!-- ================= PAGE 4: HAPPY BIRTHDAY MAIN ================= -->
+        <!-- ================= PAGE 4 ================= -->
         <div id="p4" class="page">
             <div class="badge-gaming">🔥 LEVEL 4: THE BOOYAH BLAST</div>
             <h1 style="font-size: 40px; color: #00ffcc; text-shadow: 0 0 25px #00ffcc;">🎉 HAPPY BIRTHDAY BISMA 🎉</h1>
             <p class="subtitle">🎂 LEVEL UP CELEBRATION - 24th JULY 👑</p>
-            
             <div style="font-size: 70px; margin: 20px 0;">🎂🍰✨</div>
-            
             <div class="content-box" style="border-left: 5px solid #ffaa00;">
                 Wishing you the happiest, brightest, and most legendary birthday ever, my dear <strong>Bisma (Lara)</strong>! 🎉 <br><br>
                 Duas hain ke aapki life diamonds, infinite happiness, top ranks aur kamyabi se bhar jaye. Tum jaisa loyal aur pure gaming partner milna kismat ki baat hai. Hamesha haste muskurate raho! 🤗❤️
@@ -211,7 +204,7 @@
             <button class="btn-gamer" onclick="navigate(5)">Claim Free Diamonds 💎</button>
         </div>
 
-        <!-- ================= PAGE 5: DIAMONDS DROP ================= -->
+        <!-- ================= PAGE 5 ================= -->
         <div id="p5" class="page">
             <div class="badge-gaming">💎 LEVEL 5: GRANDMASTER REWARD</div>
             <h1>DIAMOND AIRDROP SUCCESSFUL</h1>
@@ -230,12 +223,18 @@
         function handleMusic() {
             var track = document.getElementById('bg-music');
             var controller = document.getElementById('audio-controls');
-            if (track.paused) {
-                track.play();
-                controller.innerHTML = "⏸️ Pause Sound";
-            } else {
-                track.pause();
-                controller.innerHTML = "🎵 Play Game Sound";
-            }
+            try {
+                if (track.paused) {
+                    track.play();
+                    controller.innerHTML = "⏸️ Pause Sound";
+                } else {
+                    track.pause();
+                    controller.innerHTML = "🎵 Play Game Sound";
+                }
+            } catch(e) { console.log("Audio block bypass"); }
         }
 
+        function navigate(pageNumber) {
+            // Safe music trigger that won't freeze the button
+            var track = document.getElementById('bg-music');
+            if (track && track.paused) {
