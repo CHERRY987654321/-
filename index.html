@@ -3,116 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Bisma! 🎮✨</title>
+    <title>Mission Lara: Grandmaster Birthday! 🎮✨</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle, #1a0826 0%, #05010d 100%);
+            background: #03010a;
+            background-image: radial-gradient(circle, #2a0845 0%, #03010a 100%);
             color: #ffffff;
             font-family: 'Segoe UI', Roboto, sans-serif;
             text-align: center;
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(20, 10, 35, 0.8);
-            border: 2px solid #ffaa00;
-            border-radius: 20px;
-            box-shadow: 0 0 30px #ff5500;
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 10;
+        #audio-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff5500, #ff007f);
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 0 20px #ff5500;
         }
 
-        .ff-badge {
-            background: linear-gradient(135deg, #ff5500, #ffaa00);
-            color: black;
-            padding: 6px 15px;
-            font-weight: bold;
+        .container {
+            max-width: 620px;
+            margin: 40px auto;
+            padding: 40px 25px;
+            background: rgba(15, 5, 28, 0.9);
+            border: 2px solid #ffaa00;
+            border-radius: 24px;
+            box-shadow: 0 0 40px rgba(255, 85, 0, 0.4);
+            backdrop-filter: blur(12px);
+            position: relative;
+        }
+
+        /* 5-Pages Engine & Free Fire Emote Style Entry */
+        .page {
+            display: none;
+            animation: emoteEntry 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        @keyframes emoteEntry {
+            from { opacity: 0; transform: scale(0.8) translateY(30px) rotate(-2deg); }
+            to { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+        }
+
+        .badge-gaming {
+            background: linear-gradient(135deg, #ff0055, #ffaa00);
+            color: white;
+            padding: 8px 20px;
+            font-weight: 900;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            border-radius: 5px;
+            border-radius: 6px;
             display: inline-block;
-            box-shadow: 0 0 10px #ffaa00;
+            box-shadow: 0 0 15px #ff0055;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 45px;
+            font-size: 42px;
             color: #ffaa00;
-            text-shadow: 0 0 15px #ff5500;
-            margin: 15px 0 5px 0;
+            text-shadow: 0 0 20px #ff5500;
+            margin: 10px 0;
+            font-weight: 900;
         }
 
-        .date-tag {
-            font-size: 20px;
+        .subtitle {
+            font-size: 19px;
             color: #00ffcc;
             font-weight: bold;
-            text-shadow: 0 0 10px #00ffcc;
+            text-shadow: 0 0 10px rgba(0,255,204,0.4);
             margin-bottom: 25px;
         }
 
-        .letter-box {
+        .content-box {
             background: rgba(0, 0, 0, 0.6);
-            border-left: 4px solid #ff5500;
-            padding: 20px;
-            border-radius: 0 15px 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 22px;
             text-align: left;
-            line-height: 1.7;
+            line-height: 1.8;
             font-size: 17px;
+            margin: 20px 0;
         }
 
-        .highlight {
-            color: #ffaa00;
+        .nickname-tag {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid #ffaa00;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-size: 18px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .btn-loot {
-            background: linear-gradient(to bottom, #ffaa00, #ff5500);
+        .btn-gamer {
+            background: linear-gradient(180deg, #ffbb00, #ff4400);
             color: white;
             border: none;
-            padding: 15px 40px;
-            font-size: 20px;
-            font-weight: bold;
+            padding: 16px 45px;
+            font-size: 19px;
+            font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 1px;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(255, 85, 0, 0.5);
-            margin-top: 25px;
+            box-shadow: 0 6px 20px rgba(255, 68, 0, 0.4);
+            margin-top: 15px;
             transition: 0.3s;
         }
 
-        .btn-loot:hover {
+        .btn-gamer:hover {
             transform: scale(1.05);
             box-shadow: 0 0 25px #ffaa00;
         }
 
-        .surprise-section {
-            display: none;
-            margin-top: 30px;
-            padding: 25px;
-            background: rgba(0, 255, 204, 0.1);
-            border: 2px dashed #00ffcc;
-            border-radius: 15px;
-        }
-
-        /* Balloon Animation Styling */
-        .balloon {
+        /* Falling Diamonds & Rewards Styling */
+        .particle {
             position: absolute;
-            width: 30px;
-            height: 40px;
-            background: #ff5500;
-            border-radius: 50%;
+            pointer-events: none;
             bottom: -50px;
-            opacity: 0.7;
-            animation: floatUp 6s linear infinite;
+            animation: gravityFall 4.5s linear infinite;
+            z-index: 99;
         }
 
-        @keyframes floatUp {
+        @keyframes gravityFall {
             0% { transform: translateY(0) rotate(0deg); opacity: 1; }
             100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
@@ -120,50 +149,93 @@
 </head>
 <body>
 
-    <!-- Background Balloons Container -->
-    <div id="balloon-container"></div>
+    <!-- Gaming Music Track -->
+    <div id="audio-controls" onclick="handleMusic()">🎵 Play Game Sound</div>
+    <audio id="bg-music" loop>
+        <source src="https://soundhelix.com" type="audio/mpeg">
+    </audio>
 
     <div class="container">
-        <div class="ff-badge">🏆 LEVEL UP: AGE +1 🏆</div>
-        <h1>💥 BISMA 💥</h1>
-        <div class="date-tag">✨ Happy Birthday - 24th July ✨</div>
-        
-        <div class="letter-box">
-            🎮 <b>To My Favorite Free Fire Queen,</b><br><br>
-            Hum dono <span class="highlight">Free Fire</span> ke lobby mein mile the, aur tab mujhe nahi pata tha ki game khelte khelte tum meri itni special online best friend ban jaogi! <br><br>
-            Duriya chahe jitni bhi hon (Long Distance Friendship), hamari dosti hamesha Grandmaster rank ki tarah top par rahegi. Jab tak tum squad mein ho, har match mein Booyah pakka hai! 🌐💞
+
+        <!-- ================= PAGE 1: LOBBY ENTER ================= -->
+        <div id="p1" class="page active-page">
+            <div class="badge-gaming">🎮 SECURITY CHECK: OK</div>
+            <h1>BATTLEGROUND LOBBY</h1>
+            <p class="subtitle">🎯 Access Granted to Squad Member</p>
+            <div class="content-box" style="text-align: center;">
+                <span style="font-size: 50px;">👑</span><br><br>
+                Hey <strong>Bisma (Lara)</strong>! Aapka gaming partner aapka wait kar raha hai. Ek bohot hi advanced digital airdrop special aapke liye design kiya ghar se bheja gaya hai.<br><br>
+                Ready ho rank push aur surprises ke liye? Chalein match start karte hain!
+            </div>
+            <button class="btn-gamer" onclick="navigate(2)">Start Birthday Match ⚔️</button>
         </div>
 
-        <button class="btn-loot" onclick="claimLoot()">Open Birthday Airdrop 🎁</button>
-
-        <div class="surprise-section" id="lootBox">
-            <h2 style="color: #00ffcc; margin: 0; font-size: 30px;">🎉 BOOYAH! 🎉</h2>
-            <p style="font-size: 19px; line-height: 1.6; margin-top: 15px;">
-                "Wishing you the happiest birthday ever, my crime partner! May God bless you with endless happiness, diamonds, success, and everything you wish for. Hamesha aise hi rush game-play karti raho aur khush raho!" 🤗❤️
-            </p>
-            <p style="font-size: 14px; color: #ffaa00; font-style: italic; margin-top: 20px;">~ Created with love by your best gaming friend 🤝</p>
+        <!-- ================= PAGE 2: NICKNAMES REVEAL ================= -->
+        <div id="p2" class="page">
+            <div class="badge-gaming">🌟 CODE NAME VERIFICATION</div>
+            <h1>MY FAVORITE PLAYER</h1>
+            <p class="subtitle">💖 One Person, Countless Vibes</p>
+            
+            <div class="nickname-tag"><span>🧸</span> <span><b>Bhalouuu:</b> My softest, cutest long-distance friend!</span></div>
+            <div class="nickname-tag" style="border-color: #00ffcc;"><span>✨</span> <span><b>Bismuuu:</b> The girl who makes gaming infinite fun!</span></div>
+            <div class="nickname-tag" style="border-color: #ff007f;"><span>❤️</span> <span><b>Janemmm:</b> Meri life ki sabse special aur trusted partner!</span></div>
+            <div class="nickname-tag" style="border-color: #ffff00;"><span>⚡</span> <span><b>Free Fire Pro:</b> Squeezer of enemy squads and headshot queen!</span></div>
+            
+            <button class="btn-gamer" onclick="navigate(3)">Check Friendship Stats 📈</button>
         </div>
+
+        <!-- ================= PAGE 3: OUR TIMELINE ================= -->
+        <div id="p3" class="page">
+            <div class="badge-gaming">🌐 MATCH TIMELINE: LOADED</div>
+            <h1>OUR SQUAD HISTORY</h1>
+            <p class="subtitle">🤝 From Virtual Match to Best Friends</p>
+            <div class="content-box">
+                🕹️ <strong>The First Drop:</strong> Hum dono <b>Free Fire</b> ke lobby mein mile the. Ek simple random gameplay se lekar aaj meri sabse close online best friend banne tak, <strong>Bisma (Lara)</strong> tumne har stage par mera sath diya hai!<br><br>
+                🌌 <strong>Long Distance Connection:</strong> Duriyan chahe jitni bhi hon, hamari screen-to-screen dosti ne hamesha har mushkil ko beat kiya hai. Jab bhi dushmano par rush karna ho ya baatein karni hon, tum hamesha ready rehti ho!
+            </div>
+            <button class="btn-gamer" onclick="navigate(4)">Unlock The Gift 🎁</button>
+        </div>
+
+        <!-- ================= PAGE 4: HAPPY BIRTHDAY MAIN ================= -->
+        <div id="p4" class="page">
+            <div class="badge-gaming">🔥 LEVEL 4: THE BOOYAH BLAST</div>
+            <h1 style="font-size: 40px; color: #00ffcc; text-shadow: 0 0 25px #00ffcc;">🎉 HAPPY BIRTHDAY BISMA 🎉</h1>
+            <p class="subtitle">🎂 LEVEL UP CELEBRATION - 24th JULY 👑</p>
+            
+            <div style="font-size: 70px; margin: 20px 0;">🎂🍰✨</div>
+            
+            <div class="content-box" style="border-left: 5px solid #ffaa00;">
+                Wishing you the happiest, brightest, and most legendary birthday ever, my dear <strong>Bisma (Lara)</strong>! 🎉 <br><br>
+                Duas hain ke aapki life diamonds, infinite happiness, top ranks aur kamyabi se bhar jaye. Tum jaisa loyal aur pure gaming partner milna kismat ki baat hai. Hamesha haste muskurate raho! 🤗❤️
+            </div>
+            <button class="btn-gamer" onclick="navigate(5)">Claim Free Diamonds 💎</button>
+        </div>
+
+        <!-- ================= PAGE 5: DIAMONDS DROP ================= -->
+        <div id="p5" class="page">
+            <div class="badge-gaming">💎 LEVEL 5: GRANDMASTER REWARD</div>
+            <h1>DIAMOND AIRDROP SUCCESSFUL</h1>
+            <p class="subtitle">✨ Look at the Screen! ✨</p>
+            <div class="content-box" style="text-align: center; font-size: 19px;">
+                🥳 <strong>BOOYAH! MISSION COMPLISHED!</strong><br><br>
+                Screen par diamonds, balloons aur confetti ki baarish sirf aur sirf hamari <strong>Free Fire Pro Queen Bismuuu (Lara)</strong> ke liye hai! <br><br>
+                Thank you hamesha ek itna pyaara dost banne ke liye. Party dena mat bhoolna! 🎁🤝
+            </div>
+            <p style="font-size: 13px; color: #ffaa00; font-style: italic; margin-top: 30px;">~ Designed with pure heart & coding by your absolute best friend 💖</p>
+        </div>
+
     </div>
 
     <script>
-        function claimLoot() {
-            document.getElementById('lootBox').style.display = 'block';
-            document.getElementById('lootBox').scrollIntoView({ behavior: 'smooth' });
-            createBalloons();
-        }
-
-        function createBalloons() {
-            const container = document.getElementById('balloon-container');
-            const colors = ['#ff5500', '#ffaa00', '#00ffcc', '#ff007f', '#ffff00'];
-            for (let i = 0; i < 30; i++) {
-                const balloon = document.createElement('div');
-                balloon.classList.add('balloon');
-                balloon.style.left = Math.random() * 100 + 'vw';
-                balloon.style.animationDelay = Math.random() * 3 + 's';
-                balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                container.appendChild(balloon);
+        function handleMusic() {
+            var track = document.getElementById('bg-music');
+            var controller = document.getElementById('audio-controls');
+            if (track.paused) {
+                track.play();
+                controller.innerHTML = "⏸️ Pause Sound";
+            } else {
+                track.pause();
+                controller.innerHTML = "🎵 Play Game Sound";
             }
         }
-    </script>
-</body>
-</html>
+
